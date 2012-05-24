@@ -36,15 +36,16 @@ public class Neo4j {
         GraphDatabaseService graphDb = new GraphDatabaseFactory().newEmbeddedDatabase(DB_PATH);
 
         try {
-        Node firstNode =  graphDb.getNodeById(firstNodeId);
+            Node firstNode = graphDb.getNodeById(firstNodeId);
 
-        Relationship relationship = firstNode.getSingleRelationship(KNOWS, Direction.OUTGOING);
-        Node secondNode = relationship.getEndNode();
+            Relationship relationship = firstNode.getSingleRelationship(KNOWS, Direction.OUTGOING);
+            Node secondNode = relationship.getEndNode();
 
-        out.println("I just loaded this from the data store:");
-        out.println(firstNode.getProperty("message"));
-        out.println(relationship.getProperty("message"));
-        out.println(secondNode.getProperty("message"));
+            out.println("I just loaded this from the data store:");
+            out.println(firstNode.getProperty("message"));
+            out.println(firstNode.getProperty("someJson"));
+            out.println(relationship.getProperty("message"));
+            out.println(secondNode.getProperty("message"));
         } finally {
             graphDb.shutdown();
         }
@@ -62,6 +63,7 @@ public class Neo4j {
             Node firstNode = graphDb.createNode();
             firstNodeId = firstNode.getId();
             firstNode.setProperty("message", "Hello, ");
+            firstNode.setProperty("someJson", "{\n  \"is\" : \"vcard\",\n  \"name\" : \"Jim Barritt\"\n}");
 
             Node secondNode = graphDb.createNode();
             secondNode.setProperty("message", "World!");
@@ -77,7 +79,6 @@ public class Neo4j {
             tx.finish();
             graphDb.shutdown();
         }
-
 
 
     }
