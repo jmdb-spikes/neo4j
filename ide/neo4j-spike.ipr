@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AntConfiguration">
+    <defaultAnt bundledAnt="true" />
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
@@ -881,21 +884,17 @@
     <option name="autoscroll" value="false" />
     <option name="showOnlyWarnings" value="false" />
   </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="libraryTable">
+    <library name="development">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../lib/development/junit-4.8.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../lib/development/mockito-all-1.8.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../lib/development/mockito-all-1.8.4.jar!/" />
+      </SOURCES>
+    </library>
   </component>
 </project>
 
